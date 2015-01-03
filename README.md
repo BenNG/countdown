@@ -2,7 +2,7 @@
 
 Countdown is countdown with pause/resume controls.
 
-### Install
+### Install [here](https://pub.dartlang.org/packages/countdown)
 
 ### Simple use
 

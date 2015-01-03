@@ -1,6 +1,6 @@
 name: countdown
 description: Countdown is countdown with pause/resume controls
-version: 0.0.2
+version: 0.0.3
 author: Benjamin NGUYEN <benjamin.kim.nguyen@gmail.com>
 homepage: https://github.com/BenNG/countdown
 dev_dependencies:
