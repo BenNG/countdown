@@ -1,3 +1,5 @@
+## I need help to update this package because I'm not playing with dart anymore
+
 ## Countdown - yet another countdown !!
 
 Countdown is countdown with pause/resume controls.
