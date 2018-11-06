@@ -6,26 +6,23 @@ library countdown.example;
 import 'package:countdown/countdown.dart';
 import 'dart:async';
 
-
 main() {
+  CountDown cd = CountDown(Duration(seconds: 10));
+  var sub = cd.stream.listen(null);
 
-    CountDown cd = new CountDown(new Duration(seconds : 10));
-    var sub = cd.stream.listen(null);
+  sub.onData((Duration d) {
+    print(d);
+  });
 
-    sub.onData((Duration d) {
-        print(d);
-    });
+  sub.onDone(() {
+    print("done");
+  });
 
-    sub.onDone(() {
-        print("done");
-    });
+  Timer(Duration(milliseconds: 4000), () {
+    sub.pause();
+  });
 
-    new Timer(new Duration(milliseconds: 4000), () {
-        sub.pause();
-    });
-
-    new Timer(new Duration(milliseconds: 4800), () {
-        sub.resume();
-    });
-
+  Timer(Duration(milliseconds: 4800), () {
+    sub.resume();
+  });
 }

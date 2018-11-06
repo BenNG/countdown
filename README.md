@@ -12,7 +12,7 @@ Countdown is countdown with pause/resume controls.
 import 'package:countdown/countdown.dart';
 
 main() {
-    CountDown cd = new CountDown(new Duration(seconds : 10));
+    CountDown cd = CountDown(Duration(seconds : 10));
     var sub = cd.stream.listen(null);
 
     // start your countdown by registering a listener
@@ -34,7 +34,7 @@ import 'dart:async';
 
 main() {
 
-    CountDown cd = new CountDown(new Duration(seconds : 10));
+    CountDown cd = CountDown(Duration(seconds : 10));
     var sub = cd.stream.listen(null);
 
     sub.onData((Duration d) {
@@ -46,10 +46,10 @@ main() {
     });
 
     /// the countdown will have 500ms delay 
-    new Timer(new Duration(milliseconds: 4000), () {
+    Timer(Duration(milliseconds: 4000), () {
         sub.pause();
     });
-    new Timer(new Duration(milliseconds: 4500), () {
+    Timer(Duration(milliseconds: 4500), () {
         sub.resume();
     });
 

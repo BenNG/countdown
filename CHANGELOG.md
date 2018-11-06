@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0
+
+- update test package to support dart sdk 2.0+
+
 ## 0.0.3
 
 - update README
