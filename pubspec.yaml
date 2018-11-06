@@ -6,3 +6,5 @@ homepage: https://github.com/BenNG/countdown
 dev_dependencies:
   test: ^1.5.1
   quiver: any
+environment:
+  sdk: '>=2.0.0 <3.0.0'
