@@ -9,14 +9,15 @@ class CountDown {
   /// reference point for start and resume
   DateTime _begin;
   Timer _timer;
-  Duration _duration;
+  Duration/*!*/ _duration;
   Duration remainingTime;
   bool isPaused = false;
-  StreamController<Duration> _controller;
+  StreamController<Duration/*!*/> _controller;
   Duration _refresh;
 
   /// provide a way to send less data to the client but keep the data of the timer up to date
-  int _everyTick, counter = 0;
+  int _everyTick;
+  int counter = 0;
 
   /// once you instantiate the CountDown you need to register to receive information
   CountDown(Duration duration,
@@ -32,7 +33,7 @@ class CountDown {
         onCancel: _onCancel);
   }
 
-  Stream<Duration> get stream => _controller.stream;
+  Stream<Duration/*!*/> get stream => _controller.stream;
 
   /// _onListen
   /// invoke when the first subscriber has subscribe and not before to avoid leak of memory
@@ -45,7 +46,7 @@ class CountDown {
   /// the remaining time is set at '_refresh' ms accurate
   _onPause() {
     isPaused = true;
-    _timer.cancel();
+    _timer?.cancel();
     _timer = null;
   }
 
@@ -63,7 +64,7 @@ class CountDown {
   _onCancel() {
     // on pause we already cancel the _timer
     if (!isPaused) {
-      _timer.cancel();
+      _timer?.cancel();
       _timer = null;
     }
     // _controller.close(); // close automatically the "pipe" when the sub close it by sub.cancel()
@@ -75,7 +76,6 @@ class CountDown {
     this.remainingTime = this._duration - alreadyConsumed;
     if (this.remainingTime.isNegative) {
       timer.cancel();
-      timer = null;
       // tell the onDone's subscriber that it's finish
       _controller.close();
     } else {

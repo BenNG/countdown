@@ -5,6 +5,5 @@ author: Benjamin NGUYEN <benjamin.kim.nguyen@gmail.com>
 homepage: https://github.com/BenNG/countdown
 dev_dependencies:
   test: ^1.5.1
-  quiver: any
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.10.0 <3.0.0'
