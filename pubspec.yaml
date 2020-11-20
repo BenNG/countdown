@@ -1,10 +1,10 @@
 name: countdown
 description: Countdown is countdown with pause/resume controls
-version: 0.1.0
+version: 0.2.0-nullsafety
 author: Benjamin NGUYEN <benjamin.kim.nguyen@gmail.com>
 homepage: https://github.com/BenNG/countdown
 dev_dependencies:
   test: ^1.5.1
-  quiver: any
+  quiver: ^3.0.0-nullsafety
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.12.0-29.10.beta <3.0.0'
