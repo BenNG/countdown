@@ -10,7 +10,7 @@ main() {
   CountDown cd = CountDown(Duration(seconds: 10));
   var sub = cd.stream.listen(null);
 
-  sub.onData((Duration d) {
+  sub.onData((Duration? d) {
     print(d);
   });
 
