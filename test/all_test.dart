@@ -18,7 +18,7 @@ main() {
     CountDown tc = CountDown(aSecond * 5);
     var sub = tc.stream.listen(null);
 
-    sub.onData((Duration d) {
+    sub.onData((Duration? d) {
       //print(d);
     });
 
@@ -41,7 +41,7 @@ main() {
     CountDown tc = CountDown(aSecond * 5);
     var sub = tc.stream.listen(null);
 
-    sub.onData((Duration d) {
+    sub.onData((Duration? d) {
       //print(d);
     });
 
@@ -72,7 +72,7 @@ main() {
     CountDown tc = CountDown(aSecond * 5);
     var sub = tc.stream.listen(null);
 
-    sub.onData((Duration d) {
+    sub.onData((Duration? d) {
       //print(d);
     });
 
