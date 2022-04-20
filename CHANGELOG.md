@@ -1,4 +1,7 @@
 # Changelog
+## 0.1.0
+
+- update the package to support Null Safety
 
 ## 0.1.0
 
